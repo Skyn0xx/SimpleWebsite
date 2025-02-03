@@ -1,0 +1,22 @@
+name: Deploy to IPFS via Pinata
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Upload to IPFS via Pinata
+        uses: popovoleksandr/ipfs-pinata-deploy-action@v1.3.0
+        with:
+          pinata_api_key: ${{ secrets.PINATA_API_KEY }}
+          pinata_secret_api_key: ${{ secrets.PINATA_API_SECRET }}
+          pinata_jwt: ${{ secrets.PINATA_JWT }}
+          path: "./"
