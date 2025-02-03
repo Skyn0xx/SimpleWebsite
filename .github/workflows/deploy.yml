@@ -16,7 +16,6 @@ jobs:
       - name: Upload to IPFS via Pinata
         uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
         with:
-          pinata_api_key: ${{ secrets.PINATA_API_KEY }}
-          pinata_secret_api_key: ${{ secrets.PINATA_API_SECRET }}
-          pinata_jwt: ${{ secrets.PINATA_JWT }}
+          pinata-api-key: ${{ secrets.PINATA_API_KEY }}
+          pinata-secret-api-key: ${{ secrets.PINATA_API_SECRET }}
           path: "./"
